@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vivevalemtutorial.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Legion\\Documents\\GitHub\\Thesis\\A.L.T. Selin Thesis 2.0\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Vive Valem Tutorial [Testing]"
+        }
+      }
+    }
+  ]
+}
