@@ -643,6 +643,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 45cab37cb49423141b5faf1d174434b2, type: 2}
+    - target: {fileID: -3887185075125053422, guid: eedd9c15ea633b348b05744da825c360,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.0000002682209
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: eedd9c15ea633b348b05744da825c360,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: eedd9c15ea633b348b05744da825c360,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: eedd9c15ea633b348b05744da825c360,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: eedd9c15ea633b348b05744da825c360,
+        type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eedd9c15ea633b348b05744da825c360,
         type: 3}
       propertyPath: m_Name

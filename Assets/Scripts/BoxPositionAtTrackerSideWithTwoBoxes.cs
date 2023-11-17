@@ -13,6 +13,7 @@ namespace DefaultNamespace
         public int Index = 0;
 
         [SerializeField] private Transform Tracker;
+        [SerializeField] private Transform Tracker2;
         [SerializeField] private float DistanceBetweenBoxes = .2f;
         [SerializeField] private ArdityOneTrackerBoxFollowWithLeapMotion PositionFollower;
         private bool _isPositioned = false;
@@ -41,15 +42,17 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            Debug.DrawLine(Tracker.position, Tracker.position - Tracker.up*50, Color.red, 100);
-            Debug.DrawLine(Tracker.position, Tracker.position - Tracker.right*50, Color.green, 100);
+            Debug.DrawLine(Tracker.position, Tracker2.position, Color.red, 100);
             if(!_isPositioned)
             {
                 _isPositioned = true;
                 for (int i = 0; i < Boxes.Count; i++)
                 {
-                    var pos = Tracker.position - (Tracker.up * (1f + i * DistanceBetweenBoxes)); //new Vector3(1f + i * DistanceBetweenBoxes, .01286f, 0.006f);
+                    var dir = 
+                        new Vector3(Tracker.position.x - Tracker2.position.x, 0,Tracker.position.z - Tracker2.position.z).normalized;
+                    var pos = Tracker.position - (dir * (1f + i * DistanceBetweenBoxes)); //new Vector3(1f + i * DistanceBetweenBoxes, .01286f, 0.006f);
                     Boxes[i].transform.position = pos;
+                    Boxes[i].transform.right = dir;
                 }
                 UpdateBoxes();
             }
