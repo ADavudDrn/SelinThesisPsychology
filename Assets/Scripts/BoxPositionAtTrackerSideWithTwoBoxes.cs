@@ -30,9 +30,9 @@ namespace DefaultNamespace
             }
             
             var boxCouple = new BoxCouple();
-            boxCouple.BoxType1 = BoxTypeEnum.One;
+            boxCouple.BoxType1 = BoxTypeEnum.Three;
             boxCouple.BoxMaterial1 = BoxCoupleList[0].BoxMaterial1;
-            boxCouple.BoxType2 = BoxTypeEnum.One;
+            boxCouple.BoxType2 = BoxTypeEnum.Three;
             boxCouple.BoxMaterial2 = BoxCoupleList[0].BoxMaterial1;
             BoxCoupleList.Insert(0,boxCouple);
 
@@ -51,7 +51,7 @@ namespace DefaultNamespace
                     var dir = 
                         new Vector3(Tracker.position.x - Tracker2.position.x, 0,Tracker.position.z - Tracker2.position.z).normalized;
                     var pos = Tracker.position - (dir * (1f + i * DistanceBetweenBoxes)); //new Vector3(1f + i * DistanceBetweenBoxes, .01286f, 0.006f);
-                    Boxes[i].transform.position = pos;
+                    Boxes[i].transform.position = pos - new Vector3(0,0.05f,0);
                     Boxes[i].transform.right = dir;
                 }
                 UpdateBoxes();
