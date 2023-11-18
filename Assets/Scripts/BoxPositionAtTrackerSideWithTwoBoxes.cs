@@ -9,6 +9,7 @@ namespace DefaultNamespace
     public class BoxPositionAtTrackerSideWithTwoBoxes : MonoBehaviour
     {
         public List<Box> Boxes;
+        public List<BoxCouple> BaseBoxCoupleList;
         public List<BoxCouple> BoxCoupleList;
         public int Index = 0;
 
@@ -20,7 +21,10 @@ namespace DefaultNamespace
 
         private void Awake()
         {
-
+            for (int i = 0; i < 10; i++)
+            {
+                BoxCoupleList.AddRange(BaseBoxCoupleList);
+            }
             for (int i = 0; i < BoxCoupleList.Count; i++)
             {
                 BoxCouple temp = BoxCoupleList[i];

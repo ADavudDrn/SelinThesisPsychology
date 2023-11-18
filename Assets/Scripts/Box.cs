@@ -11,8 +11,7 @@ namespace DefaultNamespace
     {
         public Transform Model;
         public BoxTypeEnum BoxType;
-        public List<Color> Colors;
-        public List<Texture> Textures;
+        
         public string SaveKey;
         [SerializeField]public SkinnedMeshRenderer Renderer;
         [SerializeField] private ParticleSystem ParticleSystem;
@@ -34,10 +33,9 @@ namespace DefaultNamespace
         {
             _headsetTransform = FindObjectOfType<Camera>().transform;
             _tracker = FindObjectOfType<Tracker>().transform;
-            Renderer.material.mainTextureScale = new Vector2(.25f, .25f);
         }
 
-        private void Update()
+        /*private void Update()
         {
             if(!_isCalibrated)
                 return;
@@ -51,7 +49,7 @@ namespace DefaultNamespace
             }
 
             Model.localPosition = _modelLocalPos + _tracker.up * posDifZ + _tracker.right * posDifX;
-        }
+        }*/
 
 
         public void CalibrateBox(Transform indexTip)
