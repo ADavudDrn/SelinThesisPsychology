@@ -32,7 +32,15 @@ namespace DefaultNamespace
 
         private void WriteCSV(string answer)
         {
-            Debug.Log(answer + " Clicked");
+            if (answer=="1")
+            {
+                Debug.Log("<color=green>"+answer + " Clicked</color>");
+            }
+            else
+            {
+                Debug.Log("<color=blue>"+answer + " Clicked</color>");
+            }
+            
             TextWriter tw = new StreamWriter(filename, true);
             var box1Compliance = GetComplianceString(_boxHolder.Boxes[0]);
             var box2Compliance = GetComplianceString(_boxHolder.Boxes[1]);

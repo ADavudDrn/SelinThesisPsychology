@@ -16,12 +16,14 @@ namespace DefaultNamespace
         [SerializeField] private Transform Tracker;
         [SerializeField] private Transform Tracker2;
         [SerializeField] private float DistanceBetweenBoxes = .2f;
+        [SerializeField] private int RepeatCount = 20;
         [SerializeField] private ArdityOneTrackerBoxFollowWithLeapMotion PositionFollower;
+        [SerializeField] private Transform HoldingSphere;
         private bool _isPositioned = false;
 
         private void Awake()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < RepeatCount; i++)
             {
                 BoxCoupleList.AddRange(BaseBoxCoupleList);
             }
@@ -58,13 +60,18 @@ namespace DefaultNamespace
                     Boxes[i].transform.position = pos - new Vector3(0,0.05f,0);
                     Boxes[i].transform.right = dir;
                 }
+
+                var totalPos = Boxes[0].transform.position + Boxes[1].transform.position;
+                totalPos /= 2;
+                HoldingSphere.position = new Vector3(totalPos.x, totalPos.y, totalPos.z + .15f);
+                
                 UpdateBoxes();
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 UpdateBoxes();
-                Debug.Log("Changed");
+                Debug.Log("<color=yellow>Changed</color>");
             }
         }
 
@@ -72,7 +79,7 @@ namespace DefaultNamespace
         {
             if (Index >= BoxCoupleList.Count)
             {
-                Debug.Log("All Cases Are Played");
+                Debug.Log("<color=red>All Cases Are Played</color>");
                 Index = 0;
             }
 

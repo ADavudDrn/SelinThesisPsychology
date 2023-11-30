@@ -12,6 +12,7 @@ namespace DefaultNamespace
     {
         public SerialController serialController;
 
+        public bool IsLeftHanded;
         public Transform IndexFinger;
 
         public SteamVR_Action_Boolean clickMove;
@@ -28,6 +29,8 @@ namespace DefaultNamespace
         [SerializeField, FoldoutGroup("Constants")] private float StepToMMForZ = 15.385f;
         [SerializeField, FoldoutGroup("Constants")] private float StepToMMForX = 15.385f;
 
+        [SerializeField] private Transform RightHandIndex;
+        [SerializeField] private Transform LeftHandIndex;
         [SerializeField, FoldoutGroup("Offsets")] private float XAxisOffset = -.5f;
         [SerializeField, FoldoutGroup("Offsets")] private float OffsetForOne = .067f;
         [SerializeField, FoldoutGroup("Offsets")] private float OffsetForTwo = .067f;
@@ -41,6 +44,14 @@ namespace DefaultNamespace
         
         private Box _choosenBox;
         private Box _previousBox;
+
+        private void Awake()
+        {
+            if (IsLeftHanded)
+                IndexFinger = LeftHandIndex;
+            else
+                IndexFinger = RightHandIndex;
+        }
 
         // Start is called before the first frame update
         void Start()

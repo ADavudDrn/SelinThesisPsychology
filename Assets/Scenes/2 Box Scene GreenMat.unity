@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serialController: {fileID: 0}
-  IsLeftHanded: 1
+  IsLeftHanded: 0
   IndexFinger: {fileID: 0}
   clickMove:
     actionPath: /actions/Move/in/ClickMove
