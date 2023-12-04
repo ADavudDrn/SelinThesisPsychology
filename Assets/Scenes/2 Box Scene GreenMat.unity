@@ -7021,7 +7021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32301c5a75d4feeab5d15a11f495845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FolderName: Data
+  FolderName: Data3
 --- !u!4 &1065030691
 Transform:
   m_ObjectHideFlags: 0
@@ -7804,7 +7804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1702774784
 SphereCollider:
   m_ObjectHideFlags: 0
